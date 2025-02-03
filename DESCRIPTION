@@ -1,0 +1,15 @@
+Package: obtools
+Title: obtools for Ocean Biology Processing Group
+Description: Tools for use with raster data originating from the Ocean Biology
+    Processing Group.
+Version: 0.1
+Encoding: UTF-8
+Depends:
+    R (>= 4.1)
+Imports:
+  yaml
+Maintainer: Ben Tupper <btupper@bigelow.org>
+Author: Ben Tupper <btupper@bigelow.org>
+URL: https://github.com/btupper/obtools
+License: MIT + file LICENSE
+RoxygenNote: 7.3.2

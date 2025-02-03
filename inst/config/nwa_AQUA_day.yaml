@@ -1,0 +1,19 @@
+name: nwa
+longname: Northwest Atlantic
+mission: MODIS
+instrument: AQUA
+level: L3SMI
+period: DAY
+resolution: 4km
+product: 
+  - SST.sst
+  - CHL.chlor_a
+  - PAR.par
+  - PIC.pic
+  - POC.poc
+path: AQUA_MODIS/L3m
+bb:
+  xmin: -77
+  xmax: -42.5
+  ymin: 36.5
+  ymax: 56.7
