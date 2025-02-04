@@ -4,7 +4,11 @@
 \alias{read_configuration}
 \title{Read a configuration}
 \usage{
-read_configuration(filename = "nwa_AQUA_day.yaml", path = config_path())
+read_configuration(
+  filename = "nwa_AQUA_day.yaml",
+  add_param = TRUE,
+  path = config_path()
+)
 }
 \arguments{
 \item{filename}{chr the name of the file}

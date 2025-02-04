@@ -14,10 +14,26 @@ config_path = function(){
 #' @param path chr the path to th configuration
 #' @return configuration list
 read_configuration = function(filename = "nwa_AQUA_day.yaml",
+                              add_param = TRUE,
                               path = config_path()){
   file = file.path(path, filename)
   if (!file.exists(file)){
     stop("config file not found: ", file)
   }
-  yaml::read_yaml(file)
+  x = yaml::read_yaml(file)
+  if (add_param) x = parse_param(x)
+  x
 }
+
+
+#' Parse the "product" element of a config list to yield a new "param" element
+#' 
+#' @export
+#' @param x configuration list
+#' @return the input list with "param" added if possible
+parse_param = function(x){
+  if ("product" %in% names(x)){
+    x$param = sapply(strsplit(x$product, ".", fixed = TRUE), "[", 2)
+  }
+  x
+} 

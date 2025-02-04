@@ -3,7 +3,7 @@ obtools
 
 Extra R-language tools to supplement [obpg R
 package](https://github.com/BigelowLab/obpg). This package serves up R
-scripts to create a local data repository or to update a local data
+scripts to create a local data repository, or to update a local data
 repository on a regular basis.
 
 # Requirements for package
@@ -22,3 +22,5 @@ which are listed here.
 - [dplyr](https://CRAN.R-project.org/package=dplyr)
 - [stars](https://CRAN.R-project.org/package=stars)
 - [sf](https://CRAN.R-project.org/package=sf)
+
+# Scripts
