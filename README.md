@@ -25,4 +25,9 @@ which are listed here.
 
 # Scripts
 
-- [update_obpg.R](inst/scripts/obpg_update.R)
+- [update_obpg.R](inst/scripts/obpg_update.R) is used to update a
+  particular data set by examining the existising database. It then
+  attempts to fetch files on the server server that are newer than the
+  most recent database record. It works for multiple parameters, but one
+  resolution/region/instrument at a time. It draws upon a configuration
+  [such as this one](inst/config/nwa_AQUA_4km_day.yaml).
