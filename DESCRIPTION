@@ -10,6 +10,6 @@ Imports:
   yaml
 Maintainer: Ben Tupper <btupper@bigelow.org>
 Author: Ben Tupper <btupper@bigelow.org>
-URL: https://github.com/btupper/obtools
+URL: https://github.com/BigelowLab/obtools
 License: MIT + file LICENSE
 RoxygenNote: 7.3.2

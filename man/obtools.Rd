@@ -12,7 +12,7 @@ This package serves up R scripts to update a local database on a regular basis.
 \seealso{
 Useful links:
 \itemize{
-  \item \url{https://github.com/btupper/obtools}
+  \item \url{https://github.com/BigelowLab/obtools}
 }
 
 }
