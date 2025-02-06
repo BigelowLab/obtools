@@ -2,7 +2,7 @@
 % Please edit documentation in R/config.R
 \name{parse_param}
 \alias{parse_param}
-\title{Parse the "product" element of a config list to yield a new "param" element}
+\title{Parse the "product" element of a config list to yield a new "param" and "suite" element}
 \usage{
 parse_param(x)
 }
@@ -13,5 +13,5 @@ parse_param(x)
 the input list with "param" added if possible
 }
 \description{
-Parse the "product" element of a config list to yield a new "param" element
+Parse the "product" element of a config list to yield a new "param" and "suite" element
 }

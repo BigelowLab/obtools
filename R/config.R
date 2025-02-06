@@ -12,6 +12,8 @@ config_path = function(){
 #' @export
 #' @param filename chr the name of the file
 #' @param path chr the path to th configuration
+#' @param add_param logical, if TRUE then process the PRODUCT line into 
+#'   suite and param
 #' @return configuration list
 read_configuration = function(filename = "nwa_AQUA_day.yaml",
                               add_param = TRUE,
@@ -26,14 +28,16 @@ read_configuration = function(filename = "nwa_AQUA_day.yaml",
 }
 
 
-#' Parse the "product" element of a config list to yield a new "param" element
+#' Parse the "product" element of a config list to yield a new "param" and "suite" element
 #' 
 #' @export
 #' @param x configuration list
 #' @return the input list with "param" added if possible
 parse_param = function(x){
   if ("product" %in% names(x)){
-    x$param = sapply(strsplit(x$product, ".", fixed = TRUE), "[", 2)
+    pp = strsplit(x$product, ".", fixed = TRUE)
+    x$param = sapply(pp, "[", 2)   # param
+    x$suite = sapply(pp, "[", 1)   # suite
   }
   x
 } 

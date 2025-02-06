@@ -11,7 +11,7 @@ NULL
 #' @export
 #' @rdname obpg_path
 set_obpg_path = function(root = ".", filename = "~/.obtools"){
-  cat(path, "\n", filename = filename)
+  cat(root, "\n", filename = filename)
 }
 
 #' @export
@@ -23,6 +23,6 @@ get_obpg_root = function(filename = "~/.obtools"){
 #' @export
 #' @rdname obpg_path
 obpg_path = function(..., 
-                     root = get_obpg_path()){
+                     root = get_obpg_root()){
   file.path(root, ...)
 }

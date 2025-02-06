@@ -13,6 +13,9 @@ read_configuration(
 \arguments{
 \item{filename}{chr the name of the file}
 
+\item{add_param}{logical, if TRUE then process the PRODUCT line into 
+suite and param}
+
 \item{path}{chr the path to th configuration}
 }
 \value{

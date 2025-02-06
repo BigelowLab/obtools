@@ -10,7 +10,7 @@ set_obpg_path(root = ".", filename = "~/.obtools")
 
 get_obpg_root(filename = "~/.obtools")
 
-obpg_path(..., root = get_obpg_path())
+obpg_path(..., root = get_obpg_root())
 }
 \arguments{
 \item{root}{chr the root OBPG data path}
