@@ -6,6 +6,16 @@ config_path = function(){
   system.file("config", package = "obtools")
 }
 
+#' List the configurations stored in the package (or some other place)
+#' 
+#' @export
+#' @param path chr the path to th configuration
+#' @param ... other argumentes for [base::list.files]
+#' @return character vector of zero or more configuration filenames 
+list_configurations = function(path = config_path(), ...){
+  list.files(path, ...)
+}
+
 
 #' Read a configuration
 #' 

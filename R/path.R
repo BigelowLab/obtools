@@ -10,8 +10,9 @@ NULL
 
 #' @export
 #' @rdname obpg_path
-set_obpg_path = function(root = ".", filename = "~/.obtools"){
-  cat(root, "\n", filename = filename)
+set_obpg_root = function(root = ".", filename = "~/.obtools"){
+  cat(root, sep = "\n", file = filename)
+  invisible(root)
 }
 
 #' @export

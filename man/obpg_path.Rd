@@ -2,11 +2,11 @@
 % Please edit documentation in R/path.R
 \name{obpg_path}
 \alias{obpg_path}
-\alias{set_obpg_path}
+\alias{set_obpg_root}
 \alias{get_obpg_root}
 \title{Get, set and build OBPG paths}
 \usage{
-set_obpg_path(root = ".", filename = "~/.obtools")
+set_obpg_root(root = ".", filename = "~/.obtools")
 
 get_obpg_root(filename = "~/.obtools")
 

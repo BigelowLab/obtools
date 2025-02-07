@@ -2,7 +2,8 @@
 
 export(config_path)
 export(get_obpg_root)
+export(list_configurations)
 export(obpg_path)
 export(parse_param)
 export(read_configuration)
-export(set_obpg_path)
+export(set_obpg_root)
