@@ -7,7 +7,7 @@ period: DAY
 resolution: 4km
 product: 
   - SST.sst
-  - CHL.chlor_a
+  #- CHL.chlor_a
   - PAR.par
   - PIC.pic
   - POC.poc

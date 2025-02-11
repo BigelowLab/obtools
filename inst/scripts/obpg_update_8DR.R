@@ -54,12 +54,11 @@ create_one_param = function(tbl, key, cfg = NULL, path = NULL){
   
   tick = Sys.time()
   charlier::info("building %s", tbl$param[1])
-  tbl     = dplyr::arrange(tbl, date)
+  tbl = dplyr::arrange(tbl, date)
   ff      = obpg::compose_filename(tbl, path)
   DD      = tbl$date
   dr      = range(as.Date(tbl$date))
   dd      = seq(from = dr[1], to = dr[2], by = 'day')
-  N       = length(dd)
   dummy   = stars::read_stars(ff[1])
   dummy[[1]] = NA_real_
   # make the Q and prepopulate
@@ -68,13 +67,12 @@ create_one_param = function(tbl, key, cfg = NULL, path = NULL){
   for (i in seq_len(7)) {
     Q = push(Q, if (dd[i] %in% DD) stars::read_stars(ff[i]) else dummy)
   }
-
+  N = length(dd)
   for (i in seq(from = 8, to = N)){
-    Q <- advance(Q, if (!(dd[i] %in% DD) || !file.exists(ff[i])) dummy else stars::read_stars(ff[i]) )
+    Q <- advance(Q, if (dd[i] %in% DD) stars::read_stars(ff[i]) else dummy)
     ofile <- obpg::compose_filename(tbl |>
                                         dplyr::slice(i) |>
-                                        dplyr::mutate(per = '8DR', 
-                                                      nrt = NA_character_),
+                                        dplyr::mutate(per = '8DR'),
                                       path,
                                       from_scratch = TRUE)
     charlier::info("%0.2f%% %s", i/N * 100, basename(ofile))
@@ -96,11 +94,11 @@ main = function(cfg, root = "."){
   charlier::start_logger(file.path(data_path, "log"))
   
   DB = read_database(data_path) |>
-    dplyr::filter(per == "DAY", param %in% cfg$param) |>
+    dplyr::filter(per == "DAY") |>
     dplyr::group_by(param) |>
     dplyr::group_map(create_one_param, .keep = TRUE, cfg = cfg, path = data_path)
   
-  obpg::build_database(path, save_db = TRUE)
+  obpg::build_database(data_path, save_db = TRUE)
 }
 
 
